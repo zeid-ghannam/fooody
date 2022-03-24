@@ -15,13 +15,14 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
+    print('current height '+MediaQuery.of(context).size.height.toString());
     return Scaffold(
       body: Column(
         children: [
           Container(
             child: Container(
               margin: const EdgeInsets.only(
-                top: 45.0,
+                top: 30.0,
                 bottom: 15.0,
               ),
               padding: const EdgeInsets.only(
