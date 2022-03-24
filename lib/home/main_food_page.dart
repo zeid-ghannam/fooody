@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fooody/utils/colors.dart';
+import 'package:fooody/utils/dimensions.dart';
 import 'package:fooody/widgets/big_text.dart';
 import 'package:fooody/widgets/small_text.dart';
-
 import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
@@ -21,13 +21,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
         children: [
           Container(
             child: Container(
-              margin: const EdgeInsets.only(
-                top: 30.0,
-                bottom: 15.0,
+              margin:  EdgeInsets.only(
+                top: Dimensions.height30,
+                bottom: Dimensions.height15,
               ),
-              padding: const EdgeInsets.only(
-                left: 20.0,
-                right: 20.0,
+              padding:  EdgeInsets.only(
+                left:Dimensions.width20,
+                right: Dimensions.width20,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,15 +44,15 @@ class _MainFoodPageState extends State<MainFoodPage> {
                             text: 'Tartous',
                             color: Colors.black54,
                           ),
-                          const Icon(Icons.arrow_drop_down_rounded),
+                           Icon(Icons.arrow_drop_down_rounded,size: Dimensions.height15,),
                         ],
                       ),
                     ],
                   ),
                   Center(
                     child: Container(
-                      width: 45.0,
-                      height: 45.0,
+                      width: Dimensions.width45,
+                      height: Dimensions.height45,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: AppColors.mainColor,

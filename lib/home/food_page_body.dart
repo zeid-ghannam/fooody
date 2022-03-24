@@ -102,8 +102,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Container(
             height: Dimensions.pageViewContainer,
             margin:  EdgeInsets.only(
-              left:Dimensions.weight10,
-              right: Dimensions.weight10,
+              left:Dimensions.width10,
+              right: Dimensions.width10,
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
@@ -119,8 +119,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             child: Container(
               height: Dimensions.pageViewTextContainer,
               margin:  EdgeInsets.only(
-                left: Dimensions.weight25,
-                right: Dimensions.weight25,
+                left: Dimensions.width25,
+                right: Dimensions.width25,
                 bottom: Dimensions.height15,
               ),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(Dimensions.radius20),
@@ -164,11 +164,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             ),
                           ),
                            SizedBox(
-                            width: Dimensions.weight15,
+                            width: Dimensions.width15,
                           ),
                           SmallText(text: '4.5 '),
                            SizedBox(
-                             width:Dimensions.weight15 ,
+                             width:Dimensions.width15 ,
                           ),
                           SmallText(text: '1287 comment'),
                         ],
