@@ -15,7 +15,6 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
-    print('current height '+MediaQuery.of(context).size.height.toString());
     return Scaffold(
       body: Column(
         children: [
@@ -44,7 +43,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                             text: 'Tartous',
                             color: Colors.black54,
                           ),
-                           Icon(Icons.arrow_drop_down_rounded,size: Dimensions.height15,),
+                           Icon(Icons.arrow_drop_down_rounded,size: Dimensions.iconSize25,),
                         ],
                       ),
                     ],
@@ -54,7 +53,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       width: Dimensions.width45,
                       height: Dimensions.height45,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor,
                       ),
                       child: const Icon(

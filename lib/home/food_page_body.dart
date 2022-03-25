@@ -41,6 +41,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     //this container hold the first section from the screen that has the page view builder
     return Column(
       children: [
+        //this section for the slider images
         Container(
           height: Dimensions.pageViewMainContainer,
           child: PageView.builder(
@@ -50,6 +51,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+        //this is the dot slider
         DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,
