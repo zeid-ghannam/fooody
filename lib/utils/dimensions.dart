@@ -8,9 +8,10 @@ class Dimensions {
   static double screenWidth= Get.context!.width;
 
   //dynamic container size
-  static double pageViewMainContainer = screenHeight/2.5;
-  static double pageViewContainer = screenHeight/3.62;
-  static double pageViewTextContainer = screenHeight/6.64;
+  static double pageViewMainContainer320 = screenHeight/2.5;
+  static double pageViewContainer220 = screenHeight/3.62;
+  static double pageViewTextContainer120 = screenHeight/6.64;
+  static double pageViewTextContainer100 = screenHeight/7.97;
 
   // dynamic height
   static double height10= screenHeight/79.7;
@@ -32,8 +33,10 @@ class Dimensions {
   static double width45= screenHeight/17.71;
 
   //dynamic font size
-  static double font20= screenHeight/39.85;
+  static double font13= screenHeight/61.30;
   static double font15= screenHeight/53.1;
+  static double font20= screenHeight/39.85;
+  static double font25= screenHeight/31.88;
 
   //radius dynamic size
   static double radius5= screenHeight/159.4;

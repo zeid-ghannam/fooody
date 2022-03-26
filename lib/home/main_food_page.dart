@@ -18,6 +18,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
     return Scaffold(
       body: Column(
         children: [
+          //this show the head of the app that contain the search button and the country and the city
           Container(
             child: Container(
               margin:  EdgeInsets.only(
@@ -66,7 +67,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ),
             ),
           ),
-          FoodPageBody(),
+          //this contain the rest of the page 
+          Expanded(child: SingleChildScrollView(child: FoodPageBody(),))
         ],
       ),
     );

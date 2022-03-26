@@ -1,5 +1,5 @@
-
 import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fooody/utils/colors.dart';
 import 'package:fooody/utils/dimensions.dart';
@@ -18,7 +18,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
-  final double _height = Dimensions.pageViewContainer;
+  final double _height = Dimensions.pageViewContainer220;
 
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       children: [
         //this section for the slider images
         Container(
-          height: Dimensions.pageViewMainContainer,
+          height: Dimensions.pageViewMainContainer320,
           child: PageView.builder(
               itemCount: 5,
               controller: pageController,
@@ -63,13 +63,129 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(Dimensions.radius5)),
           ),
         ),
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        //Popular Text
+        Container(
+          margin: EdgeInsets.only(
+            left: Dimensions.width25,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: 'Popular'),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                padding: const EdgeInsets.only(bottom: 3),
+                child: BigText(
+                  text: '.',
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              SmallText(
+                text: 'Food pairing',
+              ),
+            ],
+          ),
+        ),
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20,
+                    right: Dimensions.width20,
+                    bottom: Dimensions.height10),
+                child: Row(
+                  children: [
+                    //this container for the image in the listView
+                    Container(
+                      width: Dimensions.pageViewTextContainer120,
+                      height: Dimensions.pageViewTextContainer120,
+                      decoration: BoxDecoration(
+                        color: Colors.white38,
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/image/food0.png'),
+                        ),
+                      ),
+                    ),
+                    //this is the text container in the listView
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.pageViewTextContainer100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(Dimensions.radius20),
+                            bottomRight: Radius.circular(Dimensions.radius20),
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: Dimensions.height10,
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                              BigText(
+                                  text: 'Nutritious fruits meal in China '),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SmallText(text: 'with chinese characteristics'),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    iconColor: AppColors.iconColor1,
+                                    text: 'Normal',
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.location_on,
+                                    iconColor: AppColors.mainColor,
+                                    text: '1.7km',
+                                  ),
+                                  IconAndTextWidget(
+                                    icon: Icons.access_time_rounded,
+                                    iconColor: AppColors.iconColor2,
+                                    text: '32min',
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
 
   Widget _buildPageItem(int index) {
     //this section for doing the scaling page view
-    Matrix4 matrix4 =  Matrix4.identity();
+    Matrix4 matrix4 = Matrix4.identity();
     //this for the current page view in the slider
     if (index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);
@@ -102,9 +218,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           //this container have the image for the food in the stack
           Container(
-            height: Dimensions.pageViewContainer,
-            margin:  EdgeInsets.only(
-              left:Dimensions.width10,
+            height: Dimensions.pageViewContainer220,
+            margin: EdgeInsets.only(
+              left: Dimensions.width10,
               right: Dimensions.width10,
             ),
             decoration: BoxDecoration(
@@ -119,13 +235,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             alignment: Alignment.bottomCenter,
             //this is the bottom container which has the rest of the information
             child: Container(
-              height: Dimensions.pageViewTextContainer,
-              margin:  EdgeInsets.only(
+              height: Dimensions.pageViewTextContainer120,
+              margin: EdgeInsets.only(
                 left: Dimensions.width25,
                 right: Dimensions.width25,
                 bottom: Dimensions.height15,
               ),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(Dimensions.radius20),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
 
                   //this for making the shadow in the bottom container
                   boxShadow: const [
@@ -144,16 +261,17 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ),
                   ]),
               child: Padding(
-                padding:
-                     EdgeInsets.only(top: Dimensions.height10, left: 15.0, right: 15.0),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height10, left: 15.0, right: 15.0),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       BigText(text: 'Chinese Side'),
-                       SizedBox(
+                      SizedBox(
                         height: Dimensions.height10,
                       ),
                       Row(
+
                         children: [
                           Wrap(
                             children: List.generate(
@@ -165,17 +283,17 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                               ),
                             ),
                           ),
-                           SizedBox(
-                            width: Dimensions.width15,
+                          SizedBox(
+                            width: Dimensions.width25,
                           ),
                           SmallText(text: '4.5 '),
-                           SizedBox(
-                             width:Dimensions.width15 ,
+                          SizedBox(
+                            width: Dimensions.width25,
                           ),
                           SmallText(text: '1287 comment'),
                         ],
                       ),
-                       SizedBox(
+                      SizedBox(
                         height: Dimensions.height20,
                       ),
                       Row(
@@ -186,13 +304,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             iconColor: AppColors.iconColor1,
                             text: 'Normal',
                           ),
-
                           IconAndTextWidget(
                             icon: Icons.location_on,
                             iconColor: AppColors.mainColor,
                             text: '1.7km',
                           ),
-
                           IconAndTextWidget(
                             icon: Icons.access_time_rounded,
                             iconColor: AppColors.iconColor2,
