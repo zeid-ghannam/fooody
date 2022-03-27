@@ -44,7 +44,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                             text: 'Tartous',
                             color: Colors.black54,
                           ),
-                           Icon(Icons.arrow_drop_down_rounded,size: Dimensions.iconSize25,),
+                           Icon(Icons.arrow_drop_down_rounded,size: Dimensions.iconSize26,),
                         ],
                       ),
                     ],

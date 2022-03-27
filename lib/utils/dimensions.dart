@@ -36,7 +36,7 @@ class Dimensions {
   static double font13= screenHeight/61.30;
   static double font15= screenHeight/53.1;
   static double font20= screenHeight/39.85;
-  static double font25= screenHeight/31.88;
+  static double font26= screenHeight/30.65;
 
   //radius dynamic size
   static double radius5= screenHeight/159.4;
@@ -44,7 +44,16 @@ class Dimensions {
   static double radius20= screenHeight/39.85;
   static double radius30= screenHeight/26.56;
   // Icon dynamic size
-  static double iconSize25=screenHeight/31.88;
+  static double iconSize16=screenHeight/49.8;
+  static double iconSize20=screenHeight/39.85;
+  static double iconSize26=screenHeight/30.65;
+
+  // Popular food page
+
+  static double popularFoodImg= screenHeight/2.5;
+  //bottom height
+  static double bottomHeightBar=screenHeight/6.64;
+
 
 
 }

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fooody/utils/colors.dart';
 import 'package:fooody/utils/dimensions.dart';
+import 'package:fooody/widgets/app_column.dart';
 import 'package:fooody/widgets/big_text.dart';
 import 'package:fooody/widgets/icon_and_text_widget.dart';
 import 'package:fooody/widgets/small_text.dart';
@@ -263,60 +264,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Padding(
                 padding: EdgeInsets.only(
                     top: Dimensions.height10, left: 15.0, right: 15.0),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BigText(text: 'Chinese Side'),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      Row(
-
-                        children: [
-                          Wrap(
-                            children: List.generate(
-                              5,
-                              (index) => Icon(
-                                Icons.star,
-                                color: AppColors.mainColor,
-                                size: Dimensions.height15,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: Dimensions.width25,
-                          ),
-                          SmallText(text: '4.5 '),
-                          SizedBox(
-                            width: Dimensions.width25,
-                          ),
-                          SmallText(text: '1287 comment'),
-                        ],
-                      ),
-                      SizedBox(
-                        height: Dimensions.height20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconAndTextWidget(
-                            icon: Icons.circle_sharp,
-                            iconColor: AppColors.iconColor1,
-                            text: 'Normal',
-                          ),
-                          IconAndTextWidget(
-                            icon: Icons.location_on,
-                            iconColor: AppColors.mainColor,
-                            text: '1.7km',
-                          ),
-                          IconAndTextWidget(
-                            icon: Icons.access_time_rounded,
-                            iconColor: AppColors.iconColor2,
-                            text: '32min',
-                          ),
-                        ],
-                      ),
-                    ]),
+                child: AppColumn(text: 'Chinese Side',),
               ),
             ),
           ),
